@@ -7,6 +7,7 @@
   --blue: #4066ff;
   --lightBlue: #eeeeff;
   --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
+  --theme: #ACD49E;
 }
 
 * {
@@ -28,6 +29,7 @@ a {
   width: 100%;
 }
 
+/* horizontally and vertically center child elements */
 .flexCenter {
   display: flex;
   row-gap: 2rem;
@@ -35,12 +37,15 @@ a {
   align-items: center;
   flex-wrap: wrap;
 }
+
+/* Arrange child elements horizontally on the left side of the container */
 .flexStart {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
+/* Arrange child elements horizontally on the right side of the container */
 .flexEnd {
   display: flex;
   justify-content: flex-end;
@@ -80,6 +85,21 @@ a {
   color: orange;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.button{
+  font-weight: 500;
+  padding : 0.6rem 1.4rem;
+  color: white;
+  background: var(--blue-gradient);
+  border: none;
+  border-radius: 4px;
+  transition: all 300ms ease-in;
+}
+
+.button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /* media queries */

@@ -1,0 +1,19 @@
+.App{
+    /* to position elements */
+    position: relative;
+    /* to hide content that extends beyond the element's horizontal area */
+    overflow-x: clip;
+}
+
+.App>:nth-child(1){
+    background: var(--white);
+    position: relative;
+}
+.white-gradient{
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(100px);
+    border-radius: 50%;
+}

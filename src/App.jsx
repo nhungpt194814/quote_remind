@@ -1,7 +1,12 @@
+import Header from "./components/Header/Header";
+import './App.css'
 
 function App() {
   return (
-    <span>quote reminder website start</span>
+    <div className="App">
+      <Header></Header>
+
+    </div>
   );
 }
 
