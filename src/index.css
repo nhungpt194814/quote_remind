@@ -7,7 +7,7 @@
   --blue: #4066ff;
   --lightBlue: #eeeeff;
   --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
-  --theme: #ACD49E;
+  --theme: rgb(70, 73, 74);
 }
 
 * {

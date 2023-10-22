@@ -21,14 +21,14 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(219, 219, 219, 0.5); /* Màu nền trong suốt với độ trong suốt 50% */
+    background-color: rgba(219, 219, 219, 0.65); /* Màu nền trong suốt với độ trong suốt 50% */
     z-index: -1; /* Đặt z-index thấp hơn để lớp overlay nằm phía sau */
 }
 .h-navbar {
     justify-content: space-between;
 }
 .h-navbar .logo{
-    width: 80px;
+    width: 100px;
     border-radius: 50%;
 }
 
