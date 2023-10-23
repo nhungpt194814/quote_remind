@@ -1,0 +1,33 @@
+.b-container{
+    background-color: var(--background);
+}
+.b-retro{
+    display: flex;
+    text-align: center;
+    padding: 5% 10% 5% 10%;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--theme);
+}
+.b-input-text{
+    display: flex;
+    width: 100%;
+}
+.b-input-text>input{
+    width: 70%;
+    height: 7rem;
+    margin: 10px 0px 10px 50px;
+    border-radius: 10px;
+    border: solid 3px var(--border);
+    background-color: var(--background);
+
+}
+.b-input-frequency>input{
+    margin: 10px 0px 10px 50px;
+    width: 2rem;
+    border-radius: 5px;
+    border: solid 3px var(--border);
+    background-color: var(--background);
+
+}

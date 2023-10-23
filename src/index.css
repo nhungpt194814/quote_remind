@@ -8,6 +8,8 @@
   --lightBlue: #eeeeff;
   --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
   --theme: rgb(70, 73, 74);
+  --border: rgb(206, 203, 171);
+  --background: rgba(219,223,196, 0.5);
 }
 
 * {

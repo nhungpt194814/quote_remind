@@ -1,5 +1,6 @@
 .h-wrapper{
     color: var(--theme);
+    background-color: var(--background);
 }
 .h-container{
     justify-content: space-between; 
@@ -43,6 +44,9 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--theme);
 }
 
 .h-menu>*:hover{
