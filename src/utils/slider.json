@@ -1,38 +1,42 @@
 [
   {
-    "name": "Aliva Priva Jardin",
-    "price": "47,043",
-    "detail": "Jakarta Garden City Street, Cakung. Pulo Gadung, Jakarta Timur, DKI Jakarta",
-    "image": "./r1.png"
+    "quotes": "Spread love everywhere you go. Let no one ever come to you without leaving happier. -Mother Teresa",
+    "frequencies": "5"
   },
   {
-    "name": "Asatti Garden City",
-    "price": "66,353",
-    "detail": "Pahlawan Street XVII No.215, Cinangka, Sawangan, Depok, Jawa Barat",
-    "image": "./r2.png"
+    "quotes": "The only way to do great work is to love what you do. -Steve Jobs",
+    "frequencies": "8"
   },
   {
-    "name": "Citralan Puri Serang",
-    "price": "35,853",
-    "detail": "Ruko Puri Indah Residence Block A7, Lingkar Street, Ciracas, Serang, Banten",
-    "image": "./r3.png"
+    "quotes": "In three words I can sum up everything I've learned about life: it goes on. -Robert Frost",
+    "frequencies": "12"
   },
   {
-    "name": "Aliva Priva Jardin",
-    "price": "47,043",
-    "detail": "Jakarta Garden City Street, Cakung. Pulo Gadung, Jakarta Timur, DKI Jakarta",
-    "image": "./r1.png"
+    "quotes": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. -Albert Schweitzer",
+    "frequencies": "15"
   },
   {
-    "name": "Asatti Garden City",
-    "price": "66,353",
-    "detail": "Pahlawan Street XVII No.215, Cinangka, Sawangan, Depok, Jawa Barat",
-    "image": "./r2.png"
+    "quotes": "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart. -Helen Keller",
+    "frequencies": "7"
   },
   {
-    "name": "Citralan Puri Serang",
-    "price": "35,853",
-    "detail": "Ruko Puri Indah Residence Block A7, Lingkar Street, Ciracas, Serang, Banten",
-    "image": "./r3.png"
+    "quotes": "Life is really simple, but we insist on making it complicated. -Confucius",
+    "frequencies": "9"
+  },
+  {
+    "quotes": "The purpose of our lives is to be happy. -Dalai Lama",
+    "frequencies": "3"
+  },
+  {
+    "quotes": "Life is what happens when you're busy making other plans. -John Lennon",
+    "frequencies": "6"
+  },
+  {
+    "quotes": "Happiness is not something ready made. It comes from your own actions. -Dalai Lama",
+    "frequencies": "11"
+  },
+  {
+    "quotes": "The only limit to our realization of tomorrow will be our doubts of today. -Franklin D. Roosevelt",
+    "frequencies": "4"
   }
 ]

@@ -1,5 +1,7 @@
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
+import Slider from "./components/Slider/Slider";
+
 import './App.css'
 
 
@@ -8,7 +10,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Body></Body>
-
+      <Slider></Slider>
     </div>
   );
 }
