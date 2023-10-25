@@ -3,6 +3,7 @@
     background-color: var(--background);
 }
 .h-container{
+    border-top-left-radius: 50px;
     justify-content: space-between; 
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -22,6 +23,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    border-top-left-radius: 50px;
     background-color: rgba(219, 219, 219, 0.65); /* Màu nền trong suốt với độ trong suốt 50% */
     z-index: -1; /* Đặt z-index thấp hơn để lớp overlay nằm phía sau */
 }

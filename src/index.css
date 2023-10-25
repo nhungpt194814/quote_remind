@@ -89,6 +89,10 @@ a {
   font-weight: 600;
   margin-bottom: 20px;
 }
+.italicText {
+  font-style: italic;
+}
+
 
 .button{
   font-weight: 500;

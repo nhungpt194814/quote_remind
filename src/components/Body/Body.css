@@ -1,5 +1,6 @@
 .b-container{
     background-color: var(--background);
+    border-bottom-right-radius: 50px;
 }
 .b-retro{
     display: flex;
