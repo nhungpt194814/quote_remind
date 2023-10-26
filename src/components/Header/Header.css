@@ -3,7 +3,7 @@
     background-color: var(--background);
 }
 .h-container{
-    border-top-left-radius: 50px;
+    border-top-left-radius: 200px;
     justify-content: space-between; 
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -23,7 +23,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    border-top-left-radius: 50px;
+    border-top-left-radius: 200px;
     background-color: rgba(219, 219, 219, 0.65); /* Màu nền trong suốt với độ trong suốt 50% */
     z-index: -1; /* Đặt z-index thấp hơn để lớp overlay nằm phía sau */
 }
@@ -64,7 +64,10 @@
     width: 400px;
     height: 400px;
     border: 2px solid rgba(var(--theme) 0.75);
-    border-radius: 10px;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 50%;
     overflow: hidden;
     position: relative;
 }

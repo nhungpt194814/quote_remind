@@ -1,8 +1,9 @@
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import Slider from "./components/Slider/Slider";
-import Footer from "./components/Footer/Footer";
 import Bottom from "./components/Bottom/Bottom";
+import Footer from "./components/Footer/Footer";
+
 import './App.css'
 
 

@@ -1,0 +1,19 @@
+.f-container{
+    background-color: rgba(209, 169, 94, 0.3);
+    border-bottom-right-radius: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.f-right{
+    width: 100%;
+}
+.f-social{
+    display: flex;
+    align-items: center;
+}
+.f-contact{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}

@@ -1,11 +1,11 @@
 .bottom-container{
-    border-top-left-radius: 50px;
+    border-top-left-radius: 200px;
     justify-content: space-between; 
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--theme);
     position: relative;
-    background-image: url('./biwako.jpg'); /* Đường dẫn đến hình ảnh nền */
+    background-image: url('./biwako2.jpg'); /* Đường dẫn đến hình ảnh nền */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -18,8 +18,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    border-top-left-radius: 50px;
-    background-color: rgba(219, 219, 219, 0.65); /* Màu nền trong suốt với độ trong suốt 50% */
+    border-top-left-radius: 200px;
+    background-color: rgba(219, 219, 219, 0.4); /* Màu nền trong suốt với độ trong suốt 50% */
     z-index: -1; /* Đặt z-index thấp hơn để lớp overlay nằm phía sau */
 }
 

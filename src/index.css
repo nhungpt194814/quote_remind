@@ -87,7 +87,6 @@ a {
   color: var(--theme);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 20px;
 }
 .italicText {
   font-style: italic;
