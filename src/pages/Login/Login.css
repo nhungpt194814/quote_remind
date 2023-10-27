@@ -1,0 +1,77 @@
+.signin{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../public/assets/img/banner1.jpg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: 100% 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-clip: border-box;
+}
+.signin-blur{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.signin__body{
+    width: 36%;
+    height: 300px;
+    margin: auto;
+    background-color: rgba(184, 177, 177, 0.4);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.signin__body-header{
+    padding-top: 20px ;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    font-style: italic;
+    letter-spacing: 10px;
+    text-shadow: -1px -1px 3px var(--header-color), 3px 3px 3px #000;
+}
+.input-field{
+    margin: auto;
+    width: 60%;
+    margin-top: 30px;
+}
+.input-field input{
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    background-color:  rgba(0, 0, 0, 0.35);
+    border: none;
+    color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+.signin input::placeholder{
+    color: #fff;
+}
+.username-icon{
+    background-image: url("../../../public/assets/img/user.png");
+}
+.password-icon{
+    background-image: url("../../../public/assets/img/lock.png");
+}
+.username-icon,.password-icon{
+    background-position: 90% center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    padding-left: 20px;
+    background-color: #fff;
+}
+.submit-signin{
+    text-align: center;
+    margin-top: 40px;
+}
+#pass-validate, #user-validate{
+    color: #20bdbe;
+}
+.validate-error{
+    margin-top: 10px;
+}

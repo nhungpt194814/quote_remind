@@ -1,21 +1,19 @@
-import Header from "./components/Header/Header";
-import Body from "./components/Body/Body";
-import Slider from "./components/Slider/Slider";
-import Bottom from "./components/Bottom/Bottom";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css'
+import Home from "./pages/Home/Home";
+import User from "./pages/User/User";
+import Login from "./pages/Login/Login";
 
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Body></Body>
-      <Slider></Slider>
-      <Bottom></Bottom>
-      <Footer></Footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 
