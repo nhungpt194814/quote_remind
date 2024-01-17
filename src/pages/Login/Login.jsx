@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './Login.css';
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const nav = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -13,7 +16,23 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
+        console.log(1)
+        try{
+            const res = await axios.post(
+                'http://localhost:3000/user/login',
+                {
+                    "email": email,
+                    "password": password
+                }
+            );
+            console.log(res.data);
+            const userId = res.data.userId;
+            nav("/user/"+userId);
+        }
+        catch(error){
+            console.log(error);
+        }
     };
 
     return (

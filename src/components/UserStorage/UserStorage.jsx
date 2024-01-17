@@ -1,60 +1,87 @@
-import React, { useState } from 'react';
 import './UserStorage.css';
-import data from '../../utils/slider.json';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
 const UserStorage = () => {
-    const [quotesData, setQuotesData] = useState(data);
+    const { id } = useParams();
+    const [quotesData, setQuotesData] = useState([]);
+    const [pageNumber, setPageNumber] = useState(0);
+    const [updateContent, setUpdateContent] = useState('');
+    const [updateFrequency, setUpdateFrequency] = useState('');
+    const quotesPerPage = 5;
 
-    // CRUD quotes
+    useEffect(() => {
+        const fetchData = async () => {
+            console.log('fetchData');
+            try {
+                const res = await axios.get(`http://localhost:3000/quote/userId?userId=${id}`);
+                const newData = res.data.map(({ content, frequency, _id }) => ({ quotes: content, frequencies: frequency, quoteId: _id }));
+                console.log(newData);
+                setQuotesData(newData);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        // Gọi fetchData khi component mount hoặc id thay đổi
+        fetchData();
+    }, [id]);
+
     const handleUpdate = (index) => {
-        // Sao chép mảng dữ liệu để tránh thay đổi trực tiếp
+        console.log('handleUpdate');
+        console.log(index);
         const updatedData = [...quotesData];
-        // Đánh dấu phần tử cần chỉnh sửa
         updatedData[index].editing = true;
-        // Cập nhật state với dữ liệu đã được đánh dấu
+        console.log(updatedData[index]);
+        const quoteId = updatedData[index].quoteId;
+        console.log(quoteId)
         setQuotesData(updatedData);
     };
 
-    const handleSave = (index) => {
-        // Sao chép mảng dữ liệu để tránh thay đổi trực tiếp
+    const handleSave = async (index) => {
         const updatedData = [...quotesData];
-        // Lưu lại sự thay đổi
+        const quoteId = updatedData[index].quoteId;
+        console.log(updateContent);
+        try {
+            const res = await axios.patch(
+                `http://localhost:3000/quote/${quoteId}`,
+                {
+                    "userId": id,
+                    "content": updateContent,
+                    "frequency": updateFrequency
+                }
+            );
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
         updatedData[index].editing = false;
-        // Cập nhật state với dữ liệu đã được lưu
         setQuotesData(updatedData);
     };
 
     const handleDelete = (index) => {
-        // Sao chép mảng dữ liệu để tránh thay đổi trực tiếp
         const updatedData = [...quotesData];
-        // Xóa phần tử tại vị trí index
         updatedData.splice(index, 1);
-        // Cập nhật state với mảng mới
         setQuotesData(updatedData);
     };
 
     const handleQuoteChange = (index, event) => {
-        // Sao chép mảng dữ liệu để tránh thay đổi trực tiếp
         const updatedData = [...quotesData];
-        // Cập nhật nội dung quote khi người dùng thay đổi
+        const quoteId = updatedData[index].quoteId;
+        console.log(quoteId);
         updatedData[index].quotes = event.target.value;
-        // Cập nhật state với dữ liệu đã thay đổi
+        setUpdateContent(event.target.value);
         setQuotesData(updatedData);
     };
 
     const handleFrequenciesChange = (index, event) => {
-        // Sao chép mảng dữ liệu để tránh thay đổi trực tiếp
         const updatedData = [...quotesData];
-        // Cập nhật nội dung frequencies khi người dùng thay đổi
-        updatedData[index].frequencies = event.target.value;
-        // Cập nhật state với dữ liệu đã thay đổi
-        setQuotesData(updatedData);
+        setUpdateFrequency(event.target.value);
+        // updatedData[index].frequencies = event.target.value;
+        // setQuotesData(updatedData);
     };
 
-    // Paginate
-    const [pageNumber, setPageNumber] = useState(0);
-    const quotesPerPage = 5;
     const pagesVisited = pageNumber * quotesPerPage;
     const displayQuotes = quotesData
         .slice(pagesVisited, pagesVisited + quotesPerPage)
@@ -68,7 +95,7 @@ const UserStorage = () => {
                     </div>
                 ) : (
                     <div>
-                        <p className='secondaryText' >{quote.quotes}</p>
+                        <p className='secondaryText'>{quote.quotes}</p>
                         <p>Frequencies: {quote.frequencies}</p>
                         <button className='button' onClick={() => handleUpdate(index)}>Update</button>
                         <button className='button' onClick={() => handleDelete(index)}>Delete</button>
@@ -76,7 +103,9 @@ const UserStorage = () => {
                 )}
             </div>
         ));
+
     const pageCount = Math.ceil(quotesData.length / quotesPerPage);
+
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
