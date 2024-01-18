@@ -1,3 +1,7 @@
+// some problems facing
+// - should not allow changing 2 quotes at the same time
+
+
 import './UserStorage.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -11,15 +15,14 @@ const UserStorage = ({ onSave, setOnSave }) => {
     const [updateContent, setUpdateContent] = useState('');
     const [updateFrequency, setUpdateFrequency] = useState('');
     const quotesPerPage = 5;
+
+    // get data to show
     useEffect(() => {
         const fetchData = async () => {
-            console.log(onSave);
-
             console.log('fetchData');
             try {
                 const res = await axios.get(`http://localhost:3000/quote/userId?userId=${id}`);
                 const newData = res.data.map(({ content, frequency, _id }) => ({ quotes: content, frequencies: frequency, quoteId: _id }));
-                console.log(newData);
                 setQuotesData(newData);
             } catch (error) {
                 console.log(error);
@@ -29,20 +32,18 @@ const UserStorage = ({ onSave, setOnSave }) => {
         if (onSave === 1) {
             setOnSave(0);
         }
-        // Gọi fetchData khi component mount hoặc id thay đổi
+        // call fetchData when id, onsave, setonsave change
     }, [id, onSave, setOnSave]);
 
     const handleUpdate = (index) => {
         const updatedData = [...quotesData];
         updatedData[index].editing = true;
-        const quoteId = updatedData[index].quoteId;
         setQuotesData(updatedData);
     };
 
     const handleSave = async (index) => {
         const updatedData = [...quotesData];
         const quoteId = updatedData[index].quoteId;
-        console.log(updateContent);
         try {
             const res = await axios.patch(
                 `http://localhost:3000/quote/${quoteId}`,
@@ -62,14 +63,21 @@ const UserStorage = ({ onSave, setOnSave }) => {
 
     const handleDelete = async (index) => {
         const updatedData = [...quotesData];
+        const quoteId = updatedData[index].quoteId;
+        try {
+            const res = await axios.delete(
+                `http://localhost:3000/quote/${quoteId}`
+            );
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
         updatedData.splice(index, 1);
         setQuotesData(updatedData);
     };
 
     const handleQuoteChange = (index, event) => {
         const updatedData = [...quotesData];
-        const quoteId = updatedData[index].quoteId;
-        console.log(quoteId);
         updatedData[index].quotes = event.target.value;
         setUpdateContent(event.target.value);
         setQuotesData(updatedData);
@@ -77,6 +85,8 @@ const UserStorage = ({ onSave, setOnSave }) => {
 
     const handleFrequenciesChange = (index, event) => {
         const updatedData = [...quotesData];
+        updatedData[index].frequencies = event.target.value;
+        setQuotesData(updatedData);
         setUpdateFrequency(event.target.value);
     };
 
