@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './User.css'
 import Body from '../../components/Body/Body'
 import Bottom from '../../components/Bottom/Bottom'
@@ -7,10 +7,11 @@ import UserStorage from '../../components/UserStorage/UserStorage'
 import '../../App.css';
 
 const User = () => {
+    const [dataSave, setDataSave] = useState(0);
     return (
         <div className="App">
-            <Body></Body>
-            <UserStorage></UserStorage>
+            <Body onSave={dataSave} setOnSave={setDataSave}></Body>
+            <UserStorage onSave={dataSave} setOnSave={setDataSave}></UserStorage>
             <Bottom></Bottom>
             <Footer></Footer>
         </div>

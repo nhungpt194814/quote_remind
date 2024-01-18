@@ -16,7 +16,7 @@ const Header = () => {
 
                         <div className="button-group">
                             <button className="button">
-                                <a href="">Log in</a>
+                                <a href="http://localhost:5173/login">Log in</a>
                             </button>
                             <button className="button">
                                 <a href="">Sign up</a>

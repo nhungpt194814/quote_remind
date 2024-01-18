@@ -4,16 +4,17 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
-const UserStorage = () => {
+const UserStorage = ({ onSave, setOnSave }) => {
     const { id } = useParams();
     const [quotesData, setQuotesData] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
     const [updateContent, setUpdateContent] = useState('');
     const [updateFrequency, setUpdateFrequency] = useState('');
     const quotesPerPage = 5;
-
     useEffect(() => {
         const fetchData = async () => {
+            console.log(onSave);
+
             console.log('fetchData');
             try {
                 const res = await axios.get(`http://localhost:3000/quote/userId?userId=${id}`);
@@ -24,18 +25,17 @@ const UserStorage = () => {
                 console.log(error);
             }
         };
-        // Gọi fetchData khi component mount hoặc id thay đổi
         fetchData();
-    }, [id]);
+        if (onSave === 1) {
+            setOnSave(0);
+        }
+        // Gọi fetchData khi component mount hoặc id thay đổi
+    }, [id, onSave, setOnSave]);
 
     const handleUpdate = (index) => {
-        console.log('handleUpdate');
-        console.log(index);
         const updatedData = [...quotesData];
         updatedData[index].editing = true;
-        console.log(updatedData[index]);
         const quoteId = updatedData[index].quoteId;
-        console.log(quoteId)
         setQuotesData(updatedData);
     };
 
@@ -60,7 +60,7 @@ const UserStorage = () => {
         setQuotesData(updatedData);
     };
 
-    const handleDelete = (index) => {
+    const handleDelete = async (index) => {
         const updatedData = [...quotesData];
         updatedData.splice(index, 1);
         setQuotesData(updatedData);
@@ -78,8 +78,6 @@ const UserStorage = () => {
     const handleFrequenciesChange = (index, event) => {
         const updatedData = [...quotesData];
         setUpdateFrequency(event.target.value);
-        // updatedData[index].frequencies = event.target.value;
-        // setQuotesData(updatedData);
     };
 
     const pagesVisited = pageNumber * quotesPerPage;
